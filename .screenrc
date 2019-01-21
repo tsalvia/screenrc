@@ -1,0 +1,44 @@
+# ==================================================
+# 基本設定
+# ==================================================
+
+escape ^Jj           # escapeコマンドの変更
+vbell off            # ビジュアルベルを有効にする
+startup_message off  # 起動時の著作権表示
+altscreen on                 # alternate screen の有効化
+autodetach on                # 回線切れの時に自動的にでタッチする
+mousetrack on                # マウスの有効化
+
+# ==================================================
+# 表示設定
+# ==================================================
+
+# キャプションの設定
+caption always '%?%F%{= gW}%:%{= Kk}%?%2n%f%07=%t%='
+hardstatus alwayslastline '%m/%d %02c:%s %{= .g}%H%{-} %L=%-w%45L>%{=u g.}%n %t%{-}%+w %-17<%=%{= .y}(%l)'
+
+# 256色を有効にする
+attrcolor b ".I"
+termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+defbce on
+
+# スクロールバッファの行数を指定する
+defscrollback 10000
+
+# エンコード関連
+defkanji utf-8
+defencoding utf-8
+encoding utf-8 utf-8
+
+cjkwidth
+
+bind e eval 'command -c resize' 'echo "Resize window"'
+bind ^e eval 'command -c resize' 'echo "Resize window"'
+bind -c resize h eval 'command -c resize' 'resize -h -1'
+bind -c resize l eval 'command -c resize' 'resize -h +1'
+bind -c resize j eval 'command -c resize' 'resize -v +1'
+bind -c resize k eval 'command -c resize' 'resize -v -1'
+bind -c resize ^h eval 'command -c resize' 'resize -h -1'
+bind -c resize ^l eval 'command -c resize' 'resize -h +1'
+bind -c resize ^j eval 'command -c resize' 'resize -v +1'
+bind -c resize ^k eval 'command -c resize' 'resize -v -1'
