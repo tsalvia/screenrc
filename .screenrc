@@ -32,6 +32,9 @@ encoding utf-8 utf-8
 
 cjkwidth
 
+# 領域のリサイズ
+# Ctrl-j e の後、h l j k でサイズを変更できる
+
 bind e eval 'command -c resize' 'echo "Resize window"'
 bind ^e eval 'command -c resize' 'echo "Resize window"'
 bind -c resize h eval 'command -c resize' 'resize -h +1'
